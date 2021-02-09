@@ -78,7 +78,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
               scrollDirection: Axis.horizontal,
               children: [
                 profilKartiOlustur(
-                    'Ali', 'https://www.w3schools.com/howto/img_avatar.png'),
+                    'Gokce', 'https://www.w3schools.com/howto/img_avatar.png'),
                 profilKartiOlustur(
                     'Veli', 'https://www.w3schools.com/howto/img_avatar.png'),
                 profilKartiOlustur(

@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
 class GonderiKarti extends StatelessWidget {
-
   final String profilResimLinki;
   final String isimSoyad;
   final String gecenSure;
   final String aciklama;
   final String gonderiResimLinki;
 
-  GonderiKarti({Key key, this.profilResimLinki, this.isimSoyad, this.gecenSure, this.gonderiResimLinki, this.aciklama});
-
-  
+  GonderiKarti(
+      {Key key,
+      this.profilResimLinki,
+      this.isimSoyad,
+      this.gecenSure,
+      this.gonderiResimLinki,
+      this.aciklama});
 
   @override
   Widget build(BuildContext context) {
@@ -125,7 +128,7 @@ class GonderiKarti extends StatelessWidget {
                       color: Colors.grey,
                     ),
                     label: Text(
-                      'Paylaş',
+                      'Paylas',
                       style: TextStyle(
                         color: Colors.grey,
                         fontWeight: FontWeight.bold,
@@ -165,7 +168,7 @@ class IconluButonum extends StatelessWidget {
                   color: Colors.grey,
                 ),
                 SizedBox(
-                  width: 8.0,
+                  width: 1.0,
                 ),
                 Text(
                   yazi,
