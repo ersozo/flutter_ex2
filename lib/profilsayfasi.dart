@@ -3,6 +3,15 @@ import 'package:flutter/material.dart';
 import 'gonderikarti.dart';
 
 class ProfilSayfasi extends StatelessWidget {
+
+  final String isimSoyad;
+  final String kullaniciAdi;
+  final String kapakResimLinki;
+  final String profilResimLinki;
+
+  const ProfilSayfasi({Key key, this.isimSoyad, this.kullaniciAdi, this.kapakResimLinki, this.profilResimLinki}) : super(key: key);
+    
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,26 +30,29 @@ class ProfilSayfasi extends StatelessWidget {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: NetworkImage(
-                          'https://cdn.pixabay.com/photo/2018/07/13/10/20/cat-3535404_960_720.jpg'),
+                          kapakResimLinki),
                       fit: BoxFit.cover),
                 ),
               ),
               Positioned(
                 left: 20.0,
                 bottom: 0.0,
-                child: Container(
-                  width: 120.0,
-                  height: 120.0,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: NetworkImage(
-                            'https://cdn.pixabay.com/photo/2016/03/09/15/27/cat-1246659__340.jpg'),
-                        fit: BoxFit.cover),
-                    color: Colors.lightBlue,
-                    borderRadius: BorderRadius.circular(60.0),
-                    border: Border.all(
-                      color: Colors.white,
-                      width: 2.0,
+                child: Hero(
+                  tag: kullaniciAdi,
+                  child: Container(
+                    width: 120.0,
+                    height: 120.0,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              profilResimLinki),
+                          fit: BoxFit.cover),
+                      color: Colors.lightBlue,
+                      borderRadius: BorderRadius.circular(60.0),
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 2.0,
+                      ),
                     ),
                   ),
                 ),
@@ -52,7 +64,7 @@ class ProfilSayfasi extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Gokce Basgok',
+                      isimSoyad,
                       style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,
@@ -60,7 +72,7 @@ class ProfilSayfasi extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'gokceb',
+                      kullaniciAdi,
                       style: TextStyle(
                         fontSize: 15.0,
                         fontWeight: FontWeight.bold,
@@ -106,9 +118,9 @@ class ProfilSayfasi extends StatelessWidget {
               IconButton(
                 icon: Icon(
                   Icons.arrow_back,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
-                onPressed: () => Navigator.pop(context),
+                onPressed: () => Navigator.pop(context, true),
               ),
             ],
           ),

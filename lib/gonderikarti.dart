@@ -50,7 +50,7 @@ class GonderiKarti extends StatelessWidget {
                             image: NetworkImage(
                               profilResimLinki,
                             ),
-                            fit: BoxFit.fill,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
